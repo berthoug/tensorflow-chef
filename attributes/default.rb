@@ -2,25 +2,9 @@ include_attribute "conda"
 include_attribute "kagent"
 
 default["tensorflow"]["version"]                 = "1.15.0"
-default['tensorflow']['rocm']['version']         = "1.15.0"
 default['tensorflow']['serving']['version']      = "1.15.0"
 default['tensorflow']['serving']['url']          = "#{node['download_url']}/serving/tensorflow-model-server_#{node['tensorflow']['serving']['version']}_all.deb"
 
-default["cudatoolkit"]["version"]                = "10.0"
-default["pytorch"]["version"]                    = "1.4.0"
-default["pytorch"]["python3"]["build"]           = "py3.6_cuda10.0.130_cudnn7.6.3_0"
-default["torchvision"]["version"]                = "0.5.0"
-
-#Beam/TFX
-default['pyspark']['version']                    = "2.4.3"
-default['tfx']['version']                        = "0.14.0"
-
-#Avro
-default["avro-python3"]["version"]               = "1.9.2.1"
-
-# tensorflow-1.2.1-debian-gcc_version-python_version.whl
-# #{node['download_url']}/tensorflow-#{node['tensorflow']['version']}-#{node['platform']}-5.4-2.7.whl"
-default['tensorflow']['custom_url']    = ""
 
 #
 # TensorFlow/PyTorch example notebooks and datasets
@@ -86,9 +70,6 @@ default['tensorflow']['rdma']          = "false"
 default['tensorflow']['need_cuda']     = 0
 default['tensorflow']['need_mkl']      = 0
 default['tensorflow']['need_rdma']     = 0
-
-default['jupyter']['sparkmagic']['version']            = "0.15.0"
-default['jupyter']['sparkmagic']['url']                = node['download_url'] + "/sparkmagic-" + node['jupyter']['sparkmagic']['version'] + ".tar.gz"
 
 # Feature Store example notebooks and datasets
 #
